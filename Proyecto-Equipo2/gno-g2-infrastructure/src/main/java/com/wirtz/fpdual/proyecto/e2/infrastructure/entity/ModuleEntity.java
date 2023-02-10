@@ -17,9 +17,4 @@ public class ModuleEntity {
 
   private String moduleName;
 
-  private EvaluationEntity evaluationId;
-
-  private Set<CourseEntity> courseId;
-
-  private Set<SchoolEntity> schoolId;
 }

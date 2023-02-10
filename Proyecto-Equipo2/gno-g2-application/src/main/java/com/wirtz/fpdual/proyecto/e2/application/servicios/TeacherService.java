@@ -1,6 +1,6 @@
 package com.wirtz.fpdual.proyecto.e2.application.servicios;
 
-import com.wirtz.fpdual.proyecto.e2.domain.dto.teacher.TeacherDTO;
+import com.wirtz.fpdual.proyecto.e2.domain.dto.TeacherDTO;
 import com.wirtz.fpdual.proyecto.e2.domain.repository.TeacherRepository;
 import com.wirtz.fpdual.proyecto.e2.domain.service.TeacherServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;

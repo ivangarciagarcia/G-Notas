@@ -1,7 +1,7 @@
 package com.wirtz.fpdual.proyecto.e2.apirest.controller;
 
 import com.wirtz.fpdual.proyecto.e2.apirest.mapper.TeacherMapperTO;
-import com.wirtz.fpdual.proyecto.e2.apirest.to.teacher.TeacherTO;
+import com.wirtz.fpdual.proyecto.e2.apirest.to.TeacherTO;
 import com.wirtz.fpdual.proyecto.e2.domain.service.TeacherServiceInterface;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @AllArgsConstructor

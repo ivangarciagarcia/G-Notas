@@ -1,7 +1,7 @@
 package com.wirtz.fpdual.proyecto.e2.apirest.controller;
 
 import com.wirtz.fpdual.proyecto.e2.apirest.mapper.SchoolMapperTO;
-import com.wirtz.fpdual.proyecto.e2.apirest.to.school.SchoolTO;
+import com.wirtz.fpdual.proyecto.e2.apirest.to.SchoolTO;
 import com.wirtz.fpdual.proyecto.e2.domain.service.SchoolServiceInterface;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +49,7 @@ public class SchoolController {
 
   @PutMapping(value = "/schoolPut/{schoolId}")
   public ResponseEntity updateSchool(@PathVariable Integer schoolId, @RequestBody SchoolTO school){
+    school.setSchoolId(schoolId);
     schoolService.updateSchool(schoolId, schoolMapperTO.toSchoolDTO(school));
     return new ResponseEntity(getHeader(), HttpStatus.OK);
   }

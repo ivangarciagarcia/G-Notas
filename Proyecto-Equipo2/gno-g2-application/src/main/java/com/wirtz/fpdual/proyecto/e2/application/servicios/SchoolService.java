@@ -1,6 +1,6 @@
 package com.wirtz.fpdual.proyecto.e2.application.servicios;
 
-import com.wirtz.fpdual.proyecto.e2.domain.dto.school.SchoolDTO;
+import com.wirtz.fpdual.proyecto.e2.domain.dto.SchoolDTO;
 import com.wirtz.fpdual.proyecto.e2.domain.repository.SchoolRepository;
 import com.wirtz.fpdual.proyecto.e2.domain.service.SchoolServiceInterface;
 import lombok.AllArgsConstructor;

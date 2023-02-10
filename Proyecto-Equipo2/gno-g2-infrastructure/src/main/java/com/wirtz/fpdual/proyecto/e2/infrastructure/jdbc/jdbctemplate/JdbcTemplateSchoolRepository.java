@@ -1,9 +1,8 @@
 package com.wirtz.fpdual.proyecto.e2.infrastructure.jdbc.jdbctemplate;
 
-import com.wirtz.fpdual.proyecto.e2.domain.dto.school.SchoolDTO;
+import com.wirtz.fpdual.proyecto.e2.domain.dto.SchoolDTO;
 import com.wirtz.fpdual.proyecto.e2.domain.repository.SchoolRepository;
-import com.wirtz.fpdual.proyecto.e2.infrastructure.entity.SchoolEntity;
-import com.wirtz.fpdual.proyecto.e2.infrastructure.jdbc.queries.schooltqueries.SchoolQueries;
+import com.wirtz.fpdual.proyecto.e2.infrastructure.jdbc.queries.SchoolQueries;
 import com.wirtz.fpdual.proyecto.e2.infrastructure.mapper.SchoolDTOMapperInterface;
 import com.wirtz.fpdual.proyecto.e2.infrastructure.rowmapper.SchoolRowMapper;
 import lombok.AllArgsConstructor;
@@ -39,11 +38,11 @@ public class JdbcTemplateSchoolRepository implements SchoolRepository {
 
   @Override
   public SchoolDTO getSchoolById(Integer schoolId) {
-    MapSqlParameterSource params = new MapSqlParameterSource();
-    params.addValue("schoolId",schoolId);
+    MapSqlParameterSource sqlParameterSource = new MapSqlParameterSource();
+    sqlParameterSource.addValue("schoolId",schoolId);
     return schoolDTOMapper.toSchoolDto(namedParameterJdbcTemplate.queryForObject(
         schoolQueries.getSelectBySchoolId(),
-        params,
+            sqlParameterSource,
         new SchoolRowMapper()
     ));
   }
@@ -68,5 +67,16 @@ public class JdbcTemplateSchoolRepository implements SchoolRepository {
     MapSqlParameterSource sqlParameterSource = new MapSqlParameterSource();
     sqlParameterSource.addValue("schoolId",id);
     namedParameterJdbcTemplate.update(schoolQueries.getDeleteSchool(), sqlParameterSource);
+  }
+
+  @Override
+  public Integer getSchoolIdByObject(SchoolDTO schoolDTO) {
+    MapSqlParameterSource sqlParameterSource = new MapSqlParameterSource();
+    sqlParameterSource.addValue("school_name",schoolDTO.getSchoolName());
+    return namedParameterJdbcTemplate.query(
+            schoolQueries.getSelectIdFromSchoolObject(),
+            sqlParameterSource,
+            new SchoolRowMapper()
+    ).get(0).getSchoolId();
   }
 }

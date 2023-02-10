@@ -1,8 +1,7 @@
 package com.wirtz.fpdual.proyecto.e2.apirest.controller;
 
 import com.wirtz.fpdual.proyecto.e2.apirest.mapper.CourseTOMapperInteface;
-import com.wirtz.fpdual.proyecto.e2.apirest.to.course.CourseTO;
-import com.wirtz.fpdual.proyecto.e2.apirest.to.teacher.TeacherTO;
+import com.wirtz.fpdual.proyecto.e2.apirest.to.CourseTO;
 import com.wirtz.fpdual.proyecto.e2.domain.service.CourseServiceInterface;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

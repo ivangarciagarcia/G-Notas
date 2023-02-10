@@ -1,6 +1,6 @@
 package com.wirtz.fpdual.proyecto.e2.application.servicios;
 
-import com.wirtz.fpdual.proyecto.e2.domain.dto.evaluation.EvaluationDTO;
+import com.wirtz.fpdual.proyecto.e2.domain.dto.EvaluationDTO;
 import com.wirtz.fpdual.proyecto.e2.domain.repository.EvaluationRepository;
 import com.wirtz.fpdual.proyecto.e2.domain.service.EvaluationServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;

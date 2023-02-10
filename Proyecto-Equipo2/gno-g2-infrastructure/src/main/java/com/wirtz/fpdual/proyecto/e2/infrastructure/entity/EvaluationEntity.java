@@ -14,12 +14,11 @@ public class EvaluationEntity {
 
   private String evaluationType;
 
-  private int practicePercentage;
-
-  private int theoryPercentage;
+  private int examsPercentage;
 
   private int evaluationPercentage;
 
-  private Integer moduleId;
+
+  private Integer courseModuleId;
 
 }

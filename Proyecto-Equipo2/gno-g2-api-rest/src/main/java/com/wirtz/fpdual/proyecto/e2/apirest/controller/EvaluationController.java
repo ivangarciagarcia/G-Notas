@@ -1,8 +1,7 @@
 package com.wirtz.fpdual.proyecto.e2.apirest.controller;
 
 import com.wirtz.fpdual.proyecto.e2.apirest.mapper.EvaluationMapperTO;
-import com.wirtz.fpdual.proyecto.e2.apirest.to.evaluation.EvaluationTO;
-import com.wirtz.fpdual.proyecto.e2.apirest.to.student.StudentTO;
+import com.wirtz.fpdual.proyecto.e2.apirest.to.EvaluationTO;
 import com.wirtz.fpdual.proyecto.e2.domain.service.EvaluationServiceInterface;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

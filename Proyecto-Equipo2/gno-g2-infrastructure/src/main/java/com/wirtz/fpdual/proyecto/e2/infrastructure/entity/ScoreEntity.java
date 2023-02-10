@@ -14,13 +14,17 @@ public class ScoreEntity {
 
   private Integer scoreId;
 
-  private Integer scoreNumber;
+  private String scoreName;
+
+  private Float scoreNumber;
+  
+  private String scoreType;
 
   private Integer scorePercentage;
-
-  private ScoreType scoreType;
 
   private Integer evaluationId;
 
   private Integer studentId;
+
+  private float scoreVersion;
 }

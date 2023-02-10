@@ -1,6 +1,6 @@
 package com.wirtz.fpdual.proyecto.e2.infrastructure.mapper;
 
-import com.wirtz.fpdual.proyecto.e2.domain.dto.evaluation.EvaluationDTO;
+import com.wirtz.fpdual.proyecto.e2.domain.dto.EvaluationDTO;
 import com.wirtz.fpdual.proyecto.e2.infrastructure.entity.EvaluationEntity;
 import org.mapstruct.Mapper;
 

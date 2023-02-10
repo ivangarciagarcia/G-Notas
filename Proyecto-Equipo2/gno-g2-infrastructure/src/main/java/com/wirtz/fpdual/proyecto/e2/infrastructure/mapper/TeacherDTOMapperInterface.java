@@ -1,6 +1,6 @@
 package com.wirtz.fpdual.proyecto.e2.infrastructure.mapper;
 
-import com.wirtz.fpdual.proyecto.e2.domain.dto.teacher.TeacherDTO;
+import com.wirtz.fpdual.proyecto.e2.domain.dto.TeacherDTO;
 import com.wirtz.fpdual.proyecto.e2.infrastructure.entity.TeacherEntity;
 import org.mapstruct.Mapper;
 

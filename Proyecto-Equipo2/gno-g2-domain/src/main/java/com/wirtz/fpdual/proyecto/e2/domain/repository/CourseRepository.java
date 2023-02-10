@@ -1,6 +1,6 @@
 package com.wirtz.fpdual.proyecto.e2.domain.repository;
 
-import com.wirtz.fpdual.proyecto.e2.domain.dto.course.CourseDTO;
+import com.wirtz.fpdual.proyecto.e2.domain.dto.CourseDTO;
 
 import java.util.List;
 
@@ -10,9 +10,13 @@ public interface CourseRepository {
 
     CourseDTO getCourseById(Integer id);
 
+    Integer getCourseIdByName(String name);
+
     void createCourse(CourseDTO courseDTO);
 
     void updateCourse(CourseDTO courseDTO);
 
     void deleteCourse(Integer id);
+
+    CourseDTO selectIdFromCourseObject(CourseDTO courseDTO);
 }

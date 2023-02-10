@@ -15,10 +15,8 @@ public class EvaluationRowMapper implements RowMapper<EvaluationEntity> {
         return EvaluationEntity.builder()
                 .evaluationId(rs.getInt("evaluation_id"))
                 .evaluationType(rs.getString("evaluation_type"))
-                .theoryPercentage(rs.getInt("evaluation_theory_percentage"))
-                .practicePercentage(rs.getInt("evaluation_practice_percentage"))
+                .examsPercentage(rs.getInt("evaluation_exams_percentage"))
                 .evaluationPercentage(rs.getInt("evaluation_percentage"))
-                .moduleId(rs.getInt("module_id"))
                 .build();
     }
 }

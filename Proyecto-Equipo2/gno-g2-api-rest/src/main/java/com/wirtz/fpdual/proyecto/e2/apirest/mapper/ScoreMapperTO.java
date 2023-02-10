@@ -1,9 +1,7 @@
 package com.wirtz.fpdual.proyecto.e2.apirest.mapper;
 
-import com.wirtz.fpdual.proyecto.e2.apirest.to.score.ScoreTO;
-import com.wirtz.fpdual.proyecto.e2.apirest.to.student.StudentTO;
-import com.wirtz.fpdual.proyecto.e2.domain.dto.score.ScoreDTO;
-import com.wirtz.fpdual.proyecto.e2.domain.dto.student.StudentDTO;
+import com.wirtz.fpdual.proyecto.e2.apirest.to.ScoreTO;
+import com.wirtz.fpdual.proyecto.e2.domain.dto.ScoreDTO;
 import org.mapstruct.Mapper;
 
 import java.util.List;

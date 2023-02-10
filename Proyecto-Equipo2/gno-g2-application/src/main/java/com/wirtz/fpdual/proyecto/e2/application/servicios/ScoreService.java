@@ -1,11 +1,8 @@
 package com.wirtz.fpdual.proyecto.e2.application.servicios;
 
-import com.wirtz.fpdual.proyecto.e2.domain.dto.score.ScoreDTO;
-import com.wirtz.fpdual.proyecto.e2.domain.dto.student.StudentDTO;
+import com.wirtz.fpdual.proyecto.e2.domain.dto.ScoreDTO;
 import com.wirtz.fpdual.proyecto.e2.domain.repository.ScoreRepository;
-import com.wirtz.fpdual.proyecto.e2.domain.repository.StudentRepository;
 import com.wirtz.fpdual.proyecto.e2.domain.service.ScoreServiceInterface;
-import com.wirtz.fpdual.proyecto.e2.domain.service.StudentServiceInterface;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

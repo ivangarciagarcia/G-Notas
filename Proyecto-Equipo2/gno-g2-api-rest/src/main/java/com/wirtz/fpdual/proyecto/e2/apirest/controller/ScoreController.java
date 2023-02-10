@@ -1,11 +1,8 @@
 package com.wirtz.fpdual.proyecto.e2.apirest.controller;
 
 import com.wirtz.fpdual.proyecto.e2.apirest.mapper.ScoreMapperTO;
-import com.wirtz.fpdual.proyecto.e2.apirest.mapper.StudentMapperTO;
-import com.wirtz.fpdual.proyecto.e2.apirest.to.score.ScoreTO;
-import com.wirtz.fpdual.proyecto.e2.apirest.to.student.StudentTO;
+import com.wirtz.fpdual.proyecto.e2.apirest.to.ScoreTO;
 import com.wirtz.fpdual.proyecto.e2.domain.service.ScoreServiceInterface;
-import com.wirtz.fpdual.proyecto.e2.domain.service.StudentServiceInterface;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;

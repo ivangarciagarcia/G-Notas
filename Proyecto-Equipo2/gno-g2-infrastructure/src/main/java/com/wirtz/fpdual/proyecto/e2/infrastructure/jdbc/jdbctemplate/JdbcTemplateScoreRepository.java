@@ -1,17 +1,11 @@
 package com.wirtz.fpdual.proyecto.e2.infrastructure.jdbc.jdbctemplate;
 
 
-import com.wirtz.fpdual.proyecto.e2.domain.dto.score.ScoreDTO;
-import com.wirtz.fpdual.proyecto.e2.domain.dto.student.StudentDTO;
+import com.wirtz.fpdual.proyecto.e2.domain.dto.ScoreDTO;
 import com.wirtz.fpdual.proyecto.e2.domain.repository.ScoreRepository;
-import com.wirtz.fpdual.proyecto.e2.domain.repository.StudentRepository;
-import com.wirtz.fpdual.proyecto.e2.infrastructure.entity.StudentEntity;
-import com.wirtz.fpdual.proyecto.e2.infrastructure.jdbc.queries.studentqueries.ScoreQueries;
-import com.wirtz.fpdual.proyecto.e2.infrastructure.jdbc.queries.studentqueries.StudentQueries;
+import com.wirtz.fpdual.proyecto.e2.infrastructure.jdbc.queries.ScoreQueries;
 import com.wirtz.fpdual.proyecto.e2.infrastructure.mapper.ScoreDTOMapperInterface;
-import com.wirtz.fpdual.proyecto.e2.infrastructure.mapper.StudentDTOMapperInterface;
 import com.wirtz.fpdual.proyecto.e2.infrastructure.rowmapper.ScoreRowMapper;
-import com.wirtz.fpdual.proyecto.e2.infrastructure.rowmapper.StudentRowMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -51,18 +45,44 @@ public class JdbcTemplateScoreRepository implements ScoreRepository {
 //                new StudentRowMapper());
 //        return studentMapperDTO.toStudentDTO(list.get(0));
 //    }
-//
-//    @Override
-//    public void createStudent(StudentDTO studentDTO) {
-//        MapSqlParameterSource params = new MapSqlParameterSource();
-//        params.addValue("studentName", studentDTO.getStudentName());
-//        params.addValue("studentLastname", studentDTO.getStudentLastName());
-//        params.addValue("studentBirthdate", studentDTO.getStudentBirthdate());
-//        params.addValue("studentEmail", studentDTO.getStudentEmail());
-//        params.addValue("studentDni", studentDTO.getStudentDni());
-//        params.addValue("studentAddress", studentDTO.getStudentAddress());
-//        namedParameterJdbcTemplate.update(queries.getCreateStudent(), params);
-//    }
+
+    @Override
+    public void createScore(ScoreDTO scoreDTO) {
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("score_name", scoreDTO.getScoreName());
+        params.addValue("score_number", scoreDTO.getScoreNumber());
+        params.addValue("score_type", scoreDTO.getScoreType());
+        params.addValue("score_percentage", scoreDTO.getScorePercentage());
+        params.addValue("evaluation_id", scoreDTO.getEvaluationId());
+        params.addValue("student_id", scoreDTO.getStudentId());
+        params.addValue("score_version", scoreDTO.getScoreVersion());
+        namedParameterJdbcTemplate.update(queries.getCreateScore(), params);
+    }
+
+    @Override
+    public Integer getScoreIdFromScoreMethod(ScoreDTO scoreDTO) {
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("score_name", scoreDTO.getScoreName());
+        params.addValue("score_number", scoreDTO.getScoreNumber());
+        params.addValue("score_type", scoreDTO.getScoreType());
+        params.addValue("score_percentage", scoreDTO.getScorePercentage());
+        params.addValue("evaluation_id", scoreDTO.getEvaluationId());
+        params.addValue("student_id", scoreDTO.getStudentId());
+        params.addValue("score_version", scoreDTO.getScoreVersion());
+        return namedParameterJdbcTemplate.query(
+            queries.getGetScoreIdFromScoreObject(), params,
+            new ScoreRowMapper()
+        ).get(0).getScoreId();
+    }
+
+    @Override
+    public void updateScoreNumberById(ScoreDTO scoreDTO){
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("score_id", scoreDTO.getScoreId());
+        params.addValue("score_number", scoreDTO.getScoreNumber());
+        namedParameterJdbcTemplate.update(queries.getUpdateScoreNumberById(), params);
+
+    }
 //
 //    @Override
 //    public void updateStudent(Integer studentId, StudentDTO studentDTO) {

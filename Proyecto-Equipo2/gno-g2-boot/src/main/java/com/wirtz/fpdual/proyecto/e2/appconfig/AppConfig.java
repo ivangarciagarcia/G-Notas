@@ -18,7 +18,7 @@ public class AppConfig {
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/gnotas_g2_proyectoservidor");
         dataSource.setUsername( "root" );
-        dataSource.setPassword( "Abc123.." );
+ //       dataSource.setPassword( "Abc123.." );
         return dataSource;
     }
 

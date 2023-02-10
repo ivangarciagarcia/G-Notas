@@ -1,6 +1,6 @@
 package com.wirtz.fpdual.proyecto.e2.domain.service;
 
-import com.wirtz.fpdual.proyecto.e2.domain.dto.student.StudentDTO;
+import com.wirtz.fpdual.proyecto.e2.domain.dto.StudentDTO;
 
 import java.util.List;
 

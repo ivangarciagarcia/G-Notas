@@ -1,6 +1,6 @@
 package com.wirtz.fpdual.proyecto.e2.domain.service;
 
-import com.wirtz.fpdual.proyecto.e2.domain.dto.evaluation.EvaluationDTO;
+import com.wirtz.fpdual.proyecto.e2.domain.dto.EvaluationDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
