@@ -8,6 +8,7 @@ import com.wirtz.fpdual.proyecto.e2.domain.service.ExcelServiceInterface;
 import com.wirtz.fpdual.proyecto.e2.domain.service.GetExcelService;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URI;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -74,6 +76,7 @@ public class ExcelController {
         }catch (Exception e){
             System.out.println(e.getMessage());
             System.out.println("Error al generar el Excel");
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity<XSSFWorkbook>(excel, HttpStatus.OK);
     }
@@ -98,6 +101,10 @@ public class ExcelController {
         } catch (Exception e){
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
-        return new ResponseEntity<>("He metido todo en base de datos", HttpStatus.ACCEPTED);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setLocation(URI.create("/index"));
+        return new ResponseEntity<>(headers, HttpStatus.FOUND);
+
     }
 }

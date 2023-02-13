@@ -62,7 +62,7 @@ public class GetExcelService implements com.wirtz.fpdual.proyecto.e2.domain.serv
     public void initializeData(Integer courseId, Integer moduleId, Integer schoolYear){
         workbook = new XSSFWorkbook();
         sheet = workbook.createSheet("StudentScores");
-
+        
         courseModuleId = courseModuleRepository.getCourseModuleId(courseId, moduleId, schoolYear);
         listStudents = studentRepository.getListStudentsByCourseModuleId(courseModuleId);
         evaluations = evaluationRepository.getEvaluationByCourseModuleId(courseModuleId);
