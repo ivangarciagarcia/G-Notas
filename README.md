@@ -59,7 +59,7 @@ Si deseas contribuir a este proyecto, siéntete libre de hacer un fork del repos
 
 # Autor
 
-Este proyecto fue desarrollado por Ivan Garcia Garcia.
+Este proyecto fue desarrollado por Ivan Garcia Garcia, Iris Mckirdy Martinez y Marcos Martinez Fernandez.
 
 ## Licencia
 Este proyecto está licenciado bajo los términos de la Licencia MIT. Consulta el archivo LICENSE para obtener más información.
